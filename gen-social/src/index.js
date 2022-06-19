@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import HomepageMain from "./Components/Homepage/HomepageMain"
 import Settings from './Components/Settings/Settings';
 import Friends from "./Components/Friends/Friends"
+import Messages from "./Components/Messages/Messages"
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,7 @@ root.render(
       <Route path="/home" element={<HomepageMain />} />
       <Route path="/settings" element={<Settings/>} />
       <Route path="/friends" element={<Friends />} />
-    </Routes>
+      <Route path="/msgs" element={<Messages />} />
+     </Routes>
   </Router>
 );

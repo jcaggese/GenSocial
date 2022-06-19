@@ -64,6 +64,15 @@ const HomepageNavbar = () => {
                 <div className='col'></div>
                 <div className='col'></div>
                 <div className='col'>
+                    <NavLink className="btn btn-nav" to="/msgs">
+                        Messages
+                    </NavLink>
+                </div>
+                <div className='col'></div>
+                <div className='col'></div>
+                <div className='col'></div>
+                <div className='col'></div>
+                <div className='col'>
                     <button id="log-out" onClick={togglePopUp} style={{ borderRadius: "10px", fontSize: "17px", fontFamily: "Georgia, serif", fontWeight: "bold" }} className='btn btn-nav'>Log Out</button>
                 </div>
             </div>

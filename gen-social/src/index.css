@@ -308,3 +308,11 @@ small {
   display: flex;
   justify-content: end;
 }
+
+.messages-container {
+  background-color: blue;
+  width: 1200px;
+  padding-right: 0;
+  height: auto;
+  border: solid grey 5px;
+}

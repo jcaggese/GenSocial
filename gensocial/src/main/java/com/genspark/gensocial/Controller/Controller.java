@@ -20,6 +20,8 @@ public class Controller {
     private UserService userService;
     @Autowired
     private PostService pServ;
+    @Autowired
+    private MessagesService mServ;
 
     @GetMapping("/")
     public String homePage(){
@@ -175,4 +177,28 @@ public class Controller {
 
     @DeleteMapping("/posts/{id}")
     public String deletePost(@PathVariable(value="id")String id) {return pServ.deletePost(Integer.parseInt(id)); }
+
+
+
+
+    // Messages API
+    @GetMapping("/messages")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Message> getMessages(){
+        return mServ.getMessages();
+    }
+
+    @PostMapping("/messages/{userId}")
+    public Message sendMessage(@PathVariable(value="userId")String userId, @RequestBody String info){
+        String username = info.substring(info.indexOf("username") + 11, info.indexOf("\"}"));
+        String target = info.substring(info.indexOf("target") + 9, info.indexOf("\",\"username"));
+        String text = info.substring(info.indexOf("text") + 7, info.indexOf("\",\""));
+
+        return mServ.sendMessage(username, target, text);
+    }
+
+    @DeleteMapping("/messages/{id}")
+    public String deleteMessage(@PathVariable(value = "id")String messageId){
+        return mServ.deleteMessage(Integer.parseInt(messageId));
+    }
 }
